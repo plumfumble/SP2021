@@ -9,8 +9,8 @@ public class LevelGenerator : MonoBehaviour
     gridSpace[,] grid;
     entity[,] entityGrid;
     int roomHeight, roomWidth;
-    Vector2 roomSizeWorldUnits = new Vector2(30, 30);
-    float worldUnitsInOneGridCell = 1;
+    Vector2 roomSizeWorldUnits = new Vector2(35, 35);
+    float worldUnitsInOneGridCell = 1.2f;
     struct walker
     {
         public Vector2 dir;

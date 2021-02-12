@@ -22,7 +22,35 @@ public class PlayerAttack : MonoBehaviour
             {
                 StartCoroutine(CreateHitbox());
             }
+            else
+            {
+                if (PlayerStats.Instance.equippedWeapon.Fire())
+                {
+                    Fire();
+                }
+                else
+                {
+                    StartCoroutine(CreateHitbox());
+                }
+            }
+            
         }
+    }
+
+    void Fire()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        Vector3 clickPoint = Camera.main.ScreenToWorldPoint(mousePos);// - player.transform.position).normalized;
+        clickPoint.z = 0;
+
+        Weapon _weapon = PlayerStats.Instance.equippedWeapon;
+
+        // find the angle between the two points
+        float angle = (float)(GetAngle(new Vector2(clickPoint.x, clickPoint.y), new Vector2(player.transform.position.x, player.transform.position.y))) * Mathf.Deg2Rad;
+
+        Vector2 direction = new Vector2(-(magnitude * Mathf.Cos(angle)), -(magnitude * Mathf.Sin(angle)));
+        GameObject _bullet = Instantiate(_weapon.Base.Bullet, transform.position, Quaternion.identity);
+        _bullet.GetComponent<PlayerBullet>().SetStats(_weapon.Base.Damage, _weapon.Base.ShotSpeed, direction);
     }
 
     IEnumerator CreateHitbox()

@@ -11,16 +11,18 @@ public class Weapon
     public Weapon(WeaponBase _wbase)
     {
         Base = _wbase;
+
+        Ammo = _wbase.MaxAmmo;
+        Debug.Log(Ammo);
     }
 
     public bool Fire()
     {
-        if( Ammo > 0)
+        if (Ammo > 0)
         {
             Ammo--;
             return true;
         }
         return false;
     }
-
 }

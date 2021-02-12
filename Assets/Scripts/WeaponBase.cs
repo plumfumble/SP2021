@@ -10,6 +10,9 @@ public class WeaponBase : ScriptableObject
     [SerializeField] Sprite droppedSprite;
     [SerializeField] Sprite uiSprite;
 
+    [SerializeField] int damage;
+    [SerializeField] float knockback;
+
     // Melee Stats
     [SerializeField] float range;
     [SerializeField] float radius;
@@ -17,7 +20,11 @@ public class WeaponBase : ScriptableObject
     [SerializeField] float cooldown;
 
     [SerializeField] bool melee = true;
+
     // Ranged Stuff
+    [SerializeField] int maxAmmo;
+    [SerializeField] float shotSpeed;
+    [SerializeField] GameObject bullet;
 
     public string Name
     {
@@ -32,6 +39,16 @@ public class WeaponBase : ScriptableObject
     public Sprite UI
     {
         get { return uiSprite; }
+    }
+
+    public int Damage
+    {
+        get { return damage; }
+    }
+
+    public float Knockback
+    {
+        get { return knockback; }
     }
 
     public float Range
@@ -59,5 +76,19 @@ public class WeaponBase : ScriptableObject
         get { return melee; }
     }
 
+    public int MaxAmmo
+    {
+        get { return maxAmmo; }
+    }
+
+    public float ShotSpeed
+    {
+        get { return shotSpeed; }
+    }
+
+    public GameObject Bullet
+    {
+        get { return bullet; }
+    }
 
 }

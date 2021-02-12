@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6388223819292254317}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,9 +86,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitbox: {fileID: 6652351740842792604}
   target: {fileID: 0}
+  rb: {fileID: 7342013780822201264}
+  weaponDropPrefab: {fileID: 1484322678988415890, guid: ce8ebdcaf1c50774abdf86054d88d730, type: 3}
+  maxHealth: 5
+  health: 0
   speed: 0.5
   maxRange: 3
   minRange: 0
+  damage: 1
 --- !u!1 &7023240267633307879
 GameObject:
   m_ObjectHideFlags: 0
