@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Axe
   m_EditorClassIdentifier: 
   name: Axe
-  droppedSprite: {fileID: 0}
-  uiSprite: {fileID: 0}
+  type: 1
+  droppedSprite: {fileID: 21300000, guid: 4fc3bda15f462814cb125a84878f8e2e, type: 3}
+  uiSprite: {fileID: 21300000, guid: 7c861f90947853b4f849aaf85f9235b9, type: 3}
   damage: 3
   knockback: 15
   range: 1
@@ -22,3 +23,7 @@ MonoBehaviour:
   duration: 0.4
   cooldown: 0.6
   melee: 1
+  maxAmmo: 0
+  shotSpeed: 0
+  bullet: {fileID: 0}
+  bombHitbox: {fileID: 0}

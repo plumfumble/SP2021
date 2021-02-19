@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   name: Rifle
+  type: 2
   droppedSprite: {fileID: 21300000, guid: b7dae979e2d5d71438de525a6563aceb, type: 3}
   uiSprite: {fileID: 21300000, guid: 4fc3bda15f462814cb125a84878f8e2e, type: 3}
   damage: 3
@@ -25,3 +26,4 @@ MonoBehaviour:
   maxAmmo: 16
   shotSpeed: 15
   bullet: {fileID: 9207106178074374950, guid: 9b05a257ed8d9c949a2995c1579b09ba, type: 3}
+  bombHitbox: {fileID: 0}

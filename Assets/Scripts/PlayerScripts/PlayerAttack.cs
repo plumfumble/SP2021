@@ -47,10 +47,20 @@ public class PlayerAttack : MonoBehaviour
 
         // find the angle between the two points
         float angle = (float)(GetAngle(new Vector2(clickPoint.x, clickPoint.y), new Vector2(player.transform.position.x, player.transform.position.y))) * Mathf.Deg2Rad;
-
+        Debug.Log("[PlayerAttack.cs] Angle: " + angle);
         Vector2 direction = new Vector2(-(magnitude * Mathf.Cos(angle)), -(magnitude * Mathf.Sin(angle)));
-        GameObject _bullet = Instantiate(_weapon.Base.Bullet, transform.position, Quaternion.identity);
-        _bullet.GetComponent<PlayerBullet>().SetStats(_weapon.Base.Damage, _weapon.Base.ShotSpeed, direction);
+        Debug.Log("[PlayerAttack.cs] Direction: " + direction);
+        if (_weapon.Base.Type == WeaponType.Ranged)
+        {
+            GameObject _bullet = Instantiate(_weapon.Base.Bullet, transform.position, Quaternion.identity);
+            _bullet.GetComponent<PlayerBullet>().SetStats(_weapon.Base.Damage, _weapon.Base.ShotSpeed, direction);
+        }
+        else if (_weapon.Base.Type == WeaponType.Bomb)
+        {
+            GameObject _bomb = Instantiate(_weapon.Base.Bullet, transform.position, Quaternion.identity);
+            _bomb.GetComponent<PlayerBomb>().Initialize(_weapon.Base.Duration, _weapon.Base.ShotSpeed, direction);
+        }
+        
     }
 
     IEnumerator CreateHitbox()

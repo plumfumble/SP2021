@@ -144,4 +144,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponBase:
-  - {fileID: 11400000, guid: 6ef588ce111257c40a4bee721605e4f9, type: 2}
+  - {fileID: 11400000, guid: b3bebb471745f93469bd6d78fc5f1a13, type: 2}

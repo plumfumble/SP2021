@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: SwissArmyKnife
   m_EditorClassIdentifier: 
   name: Swiss Army Knife
+  type: 1
   droppedSprite: {fileID: 21300000, guid: 4fc3bda15f462814cb125a84878f8e2e, type: 3}
-  uiSprite: {fileID: 21300000, guid: 4fc3bda15f462814cb125a84878f8e2e, type: 3}
+  uiSprite: {fileID: 21300000, guid: 20097070a3c83854fba3c8ef138095b3, type: 3}
   damage: 2
   knockback: 10
   range: 0.75
@@ -22,3 +23,7 @@ MonoBehaviour:
   duration: 0.3
   cooldown: 0.2
   melee: 1
+  maxAmmo: 0
+  shotSpeed: 0
+  bullet: {fileID: 0}
+  bombHitbox: {fileID: 0}

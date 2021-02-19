@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum WeaponType { None, Melee, Ranged, Bomb }
+
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class WeaponBase : ScriptableObject
 {
     [SerializeField] string name;
+
+    [SerializeField] WeaponType type;
 
     [SerializeField] Sprite droppedSprite;
     [SerializeField] Sprite uiSprite;
@@ -26,9 +30,17 @@ public class WeaponBase : ScriptableObject
     [SerializeField] float shotSpeed;
     [SerializeField] GameObject bullet;
 
+    // Bomb Stuff
+    [SerializeField] GameObject bombHitbox;
+
     public string Name
     {
         get { return name; }
+    }
+
+    public WeaponType Type
+    {
+        get { return type; }
     }
 
     public Sprite Dropped
@@ -89,6 +101,11 @@ public class WeaponBase : ScriptableObject
     public GameObject Bullet
     {
         get { return bullet; }
+    }
+
+    public GameObject BombHitbox
+    {
+        get { return bombHitbox; }
     }
 
 }
