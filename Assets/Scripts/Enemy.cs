@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] Transform target;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] GameObject weaponDropPrefab;
+    [SerializeField] GameObject expPrefab;
 
     [SerializeField] int maxHealth;
     [SerializeField] int health;
@@ -16,6 +17,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxRange;
     [SerializeField] float minRange;
     [SerializeField] int damage = 1;
+
+    [SerializeField] int expDrop;
 
     private bool inDamageRange;
 
@@ -26,6 +29,7 @@ public class Enemy : MonoBehaviour
     {
         health = maxHealth;
         target = FindObjectOfType<PlayerMovement>().transform;
+        expDrop += Random.Range(0, 6);
     }
 
     void FixedUpdate()
@@ -85,6 +89,11 @@ public class Enemy : MonoBehaviour
         if (Random.Range(0f, 1f) < 0.2)
         {
             Instantiate(weaponDropPrefab, transform.position, Quaternion.identity);
+        }
+        for (int i = 0; i < expDrop; i++)
+        {
+            GameObject _e = Instantiate(expPrefab, transform.position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f)), Quaternion.identity);
+            _e.GetComponent<Experience>().CreateExp(1);
         }
         Destroy(this.gameObject);
     }

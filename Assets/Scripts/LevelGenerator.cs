@@ -27,7 +27,7 @@ public class LevelGenerator : MonoBehaviour
     float chanceEnemySpawn = 0.15f;
     int maxNumberOfEnemies = 15;
     int curNumberOfEnemies;
-    [SerializeField] GameObject randomEnemy;
+    [SerializeField] List<GameObject> randomEnemy;
 
     void Start()
     {
@@ -310,7 +310,15 @@ public class LevelGenerator : MonoBehaviour
                     case entity.empty:
                         break;
                     case entity.enemy:
-                        Spawn(x, y, randomEnemy);
+                        if (Random.Range(0f, 1f) > 0.7f)
+                        {
+                            Spawn(x, y, -0.2f, randomEnemy[1]);
+                        }
+                        else
+                        {
+                            Spawn(x, y, -0.2f, randomEnemy[0]);
+                        }
+                        
                         break;
                 }
 
@@ -320,12 +328,18 @@ public class LevelGenerator : MonoBehaviour
 
     void Spawn(float x, float y, GameObject toSpawn)
     {
+        Spawn(x, y, 0, toSpawn);
+    }
+
+    void Spawn(float x, float y, float z, GameObject toSpawn)
+    {
         // find the position to spawn
         Vector2 offset = roomSizeWorldUnits / 2.0f;
         Vector2 spawnPos = new Vector2(x, y) * worldUnitsInOneGridCell - offset;
 
+        Vector3 fullPos = new Vector3(spawnPos.x, spawnPos.y, z);
         // spawn object
-        Instantiate(toSpawn, spawnPos, Quaternion.identity);
+        Instantiate(toSpawn, fullPos, Quaternion.identity);
     }
     
     int NumberOfFloors()

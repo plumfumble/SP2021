@@ -56,6 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerHitbox.cs" />
+    <Compile Include="Assets\Scripts\PlayerBomb.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
     <Compile Include="Assets\Scripts\WeaponDrop.cs" />
     <Compile Include="Assets\Scripts\WeaponBase.cs" />
@@ -65,7 +66,9 @@
     <Compile Include="Assets\Scripts\Weapon.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\PlayerScripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerBomb.cs" />
+    <Compile Include="Assets\Scripts\Experience.cs" />
+    <Compile Include="Assets\Scripts\BiteEnemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyHitbox.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

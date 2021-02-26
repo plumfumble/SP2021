@@ -88,12 +88,14 @@ MonoBehaviour:
   target: {fileID: 0}
   rb: {fileID: 7342013780822201264}
   weaponDropPrefab: {fileID: 1484322678988415890, guid: ce8ebdcaf1c50774abdf86054d88d730, type: 3}
+  expPrefab: {fileID: 1537960388230000186, guid: d21f270dd18076c4fb04b5222cbf36c9, type: 3}
   maxHealth: 5
   health: 0
   speed: 0.5
   maxRange: 3
   minRange: 0
   damage: 1
+  expDrop: 0
 --- !u!1 &5761009465787323545
 GameObject:
   m_ObjectHideFlags: 0

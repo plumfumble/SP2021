@@ -208,7 +208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wallObj: {fileID: 5732537685787120470, guid: 12911279fdea51c49b87f374b735ea64, type: 3}
   floorObj: {fileID: 7883407448605256081, guid: 9fd617c2db315ce4d9fad34de6d37d43, type: 3}
-  randomEnemy: {fileID: 2461314543751739680, guid: f34e80f16210a99409e7c3756a5383f3, type: 3}
+  randomEnemy:
+  - {fileID: 2461314543751739680, guid: f34e80f16210a99409e7c3756a5383f3, type: 3}
+  - {fileID: 3961182370608511670, guid: 4f6f84165dd615f4486ec8395505dc41, type: 3}
 --- !u!4 &655918983
 Transform:
   m_ObjectHideFlags: 0

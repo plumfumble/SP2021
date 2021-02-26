@@ -16,6 +16,8 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     public int health;
 
+    [SerializeField] int experience;
+    [SerializeField] int level = 1;
 
     private Vector2 knockbackVector;
     private bool invincible;
@@ -82,6 +84,16 @@ public class PlayerStats : MonoBehaviour
             StartCoroutine(StopKnockback());
         }
         return false;
+    }
+
+    public void GainExperience(int value)
+    {
+        experience += value;
+        if (experience > level * 100)
+        {
+            experience -= level * 100;
+            level++;
+        }
     }
 
     private IEnumerator InvincibleCounter()
